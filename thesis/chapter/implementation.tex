@@ -1,0 +1,38 @@
+\chapter{Implementation}
+In this section the implementation of the described propositions is discussed.\\
+RHBP code?, Python 2.7? brief description of rhbp implementation? Structure of activation algorithm and goal classes
+
+\section{RHBP}
+
+\section{Activation algorithm with reduced discrimination of nodes}
+Uniform activation algorithm with its improvements taken as starting point \\
+As first the division by the number of outputs is removed from all five activation computation methods: activation by goal, inhibition by protected goal, activation by predecessors, successors and inhibitions from conflictors.  Since the activation algorithm currently used in RHBP has the division by the number of the receiving node's inputs removed, it was reintroduced as one of the variants. Two further versions were implemented: one with the division removed as in the original algorithm and one with average value of total activation both divided and not divided.
+Three classes derived from UniformActivationAlgorithm\\
+three subclasses 
+\label{stegotext}\lstinputlisting[language=PYTHON]{programming/Tyrrell/tyrrell.py}
+\section{REASM}
+", there are no means to support goals with a continuous truth state
+(like ’have stamina’) to become increasingly demanding the less they are
+satisfied. Relevance conditions are introduced to model different types of goals. Maintenance goals, i.e. the motivation to preserve a certain state (e.g. have
+stamina) can be achieved by adding a relevance condition (’stamina low’)
+that increases the relevance of a goal once stamina decreases. The more
+the current state diverges from the goal state, the more urgent the goal becomes. Achievement goals, i.e. the motivation to reach a certain state, on
+the other hand, are more relevant the closer the agent is to the goal."\\
+\textbf{Static importance and dynamic relevance are combined by multiplication to
+calculate the utility of the goal.}\\
+The implementation of REASM in RHBP ensues in limited scope and consists of two main parts. As first, Goal class is extended to accomodate and utilize the relevance condition.
+ExtendedGoal(GoalBase) - goal relevance condition added
+\\\\
+http://www.ep.liu.se/ea/cis/1999/007/17/cis9900717.pdf
+
+Activation is not
+divided by the number of incoming or outgoing links.
+Therefore behaviors satisfying multiple goals are prefered, goals with alternative behaviors satisfying them are not penalized. And there is no conuence of activation
+from the same goal due to the fact that only the
+strongest path of activation from each goal to a module
+is taken into account 
+\begin{comment}
+Länge: ca. 5-25 Seiten\\\\
+In diesem Kapitel wird die Umsetzung des entwickelten Lösungskonzeptes in einer konkreten Umgebung, beispielsweise Systemumgebung dargestellt. Die Trennung in Lösungskonzept und Umsetzung ist Bestandteil strukturierten Arbeitens und wird konkret durch die Notwendigkeit begründet, das Lösungskonzept nicht durch Probleme zu verwässern, die bei der Umsetzung auftauchen können, aber keinen Einfluss auf die Anwendbarkeit des Lösungskonzepts haben. Ein typisches Beispiel sind hierfür politische Rahmenbedingungen usw.
+\end{comment}
+ 

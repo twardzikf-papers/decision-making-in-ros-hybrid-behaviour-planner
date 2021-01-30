@@ -1,0 +1,45 @@
+\makeatletter
+\thispagestyle{empty}
+\begin{tabular}{lcr}
+\ifx\pdftexversion\undefined
+  \includegraphics[scale=0.5]{tu_logo2}
+\else
+  \includegraphics[scale=0.5]{tu_logo2}
+\fi
+  &\hspace{1.5cm}
+   \hspace{4.5cm} &
+  \includegraphics[scale=0.6]{dailogo}
+  \\
+\end{tabular}
+
+~\vspace{0.5cm}
+
+\begin{center}
+\begin{Huge}
+Technische Universität Berlin\\
+\vspace{1mm}
+\end{Huge}{\Large Fakultät IV - Elektrotechnik und Informatik\\
+Fachgebiet AOT\\
+Prof. Dr. Dr. h.c. S.}\\
+
+\vspace{26mm}
+\begin{LARGE}
+\insertsubject\\
+\end{LARGE}
+\vspace{8mm}
+\begin{LARGE}
+\@title\\
+\end{LARGE}
+\vspace{3 cm}
+\@author\\
+Matrikel--Nummer \trmatrikelnummer\\
+\vspace{1cm}
+\begin{tabular}{lll}
+{\bf Betreuer} & \trbetreuerA\\
+{\bf Gutachter} & \trguta \\
+                & \trgutb \\
+\end{tabular}
+
+\end{center}
+\makeatother
+%\clearpage

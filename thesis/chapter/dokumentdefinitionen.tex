@@ -1,0 +1,145 @@
+\documentclass[12pt,a4paper]{report}
+%\documentclass[12pt,a4paper,onepage]{scrbook}
+
+\makeatletter
+
+\def\author#1{\gdef\insertauthor{#1}\gdef\@author{#1}\hypersetup{pdfauthor={#1}}}
+\def\title#1{\gdef\inserttitle{#1}\gdef\@title{#1}\hypersetup{pdftitle={#1}}}
+\def\keywords#1{\gdef\insertkeywords{#1}\hypersetup{pdfkeywords={#1}}}
+\def\subject#1{\gdef\insertsubject{#1}\hypersetup{pdfsubject={#1}}}
+
+\makeatother
+
+\RequirePackage[final,breaklinks,bookmarks]{hyperref}
+
+\hypersetup{%
+    pdffitwindow=true,
+    pdfmenubar=true,
+    frenchlinks=false,
+    colorlinks=false,
+    bookmarksopen=true,
+    bookmarksnumbered=true,
+    pagebackref=true,
+    pdfpagelabels=true,
+    pdfstartview=FitH,
+    pdfcreator  = {\LaTeX\ with package \flqq hyperref\frqq},
+    pdfproducer = {pdfeTeX-0.\the\pdftexversion\pdftexrevision}
+}
+
+
+%############################################################################
+%########################### Change This ####################################
+%############################################################################
+%replace with German "Bachelor Thesis", "Master Thesis" or "Diplomarbeit" or
+%replace with English "Bachelor's Thesis", "Master's Thesis"  
+\subject{Bachelor Thesis}b
+%put your title here
+\title{Exploring Adaptivity and Robustness in the Decision-Making Algorithm of the ROS Hybrid Behaviour Planner}
+%your name
+\author{Filip Twardzik}
+% your matrikelnummer
+\newcommand{\trmatrikelnummer}{366615}
+%supervisor
+\newcommand{\trbetreuerA}{M.Sc. C.}
+%reviewer 1
+\newcommand{\trguta}{Prof. Dr. Dr. h.c. S.}
+%reviewer two
+\newcommand{\trgutb}{Prof. Dr. O.}
+\date{\today}
+%Auswahl passender Keywords, dass sind nur Beispiele
+\keywords{Multi-Agent Systems, Decision-Making, Behaviour Network}
+
+%############################################################################
+%############################################################################
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\newcommand{\bmpstego}{stego}
+\newcommand{\changefont}[3]{
+\fontfamily{#1} \fontseries{#2} \fontshape{#3} \selectfont}
+
+% Sprachen:
+%\usepackage[ngerman]{babel} % Silbentrennung Deutsch neue Rechtschreibung
+%\selectlanguage{ngerman}
+
+\sloppy
+%\usepackage{makeidx}
+%\makeglossary
+\makeindex
+
+%\usepackage{sty/abbreviations}
+
+% ============ MY OWN PACKAGES ====================
+\usepackage{verbatim}
+\usepackage{todonotes}
+
+% ============ /MY OWN PACKAGES ===================
+\usepackage{amsmath, marvosym} % Mathematik
+\usepackage{times, url, geometry, amssymb, graphicx, booktabs}
+\usepackage{fancyhdr} %Kopf- und Fußzeilen
+\usepackage[hyphenbreaks]{breakurl}
+\usepackage{color} % Farben
+
+\usepackage{subfigure} % mehrere Abbildungen nebeneinander/übereinander
+\usepackage{latexsym}
+
+\geometry{a4paper,body={5.8in,9in}}
+\setlength{\headheight}{15pt}
+
+\usepackage{setspace} % 1,5 Zeilenabstand
+\onehalfspacing
+\setcounter{secnumdepth}{4}
+\setcounter{tocdepth}{3} 
+
+% Hurenkinder- und Schusterjungenregelung
+\clubpenalty = 10000 % schliesst Schusterjungen aus
+\widowpenalty = 10000 % schliesst Hurenkinder aus
+
+% aller Bilder werden im Unterverzeichnis figures gesucht:
+\graphicspath{{figures/}}
+
+% Headers:
+%\pagestyle{headings}
+\pagestyle{fancy}
+\pagestyle{headings}
+
+% Literaturverzeichnis
+%\usepackage{bibgerm}
+%\usepackage{natbib}
+\bibliographystyle{plaindin} % Literaturangaben nach Auftreten sortieren %{gerplain}
+
+\usepackage[procnames]{listings} % für Formatierung in Quelltexten
+
+\definecolor{keywords}{RGB}{255,0,90}
+\definecolor{comments}{RGB}{0,0,113}
+\definecolor{red}{RGB}{160,0,0}
+\definecolor{green}{RGB}{0,150,0}
+\definecolor{grau}{gray}{0.25}
+ 
+\lstset{language=Python, 
+        basicstyle=\ttfamily\small, 
+        keywordstyle=\color{keywords},
+        commentstyle=\color{comments},
+        stringstyle=\color{red},
+        showstringspaces=false,
+        identifierstyle=\color{green},
+        procnamekeys={def,class}}
+\lstset{
+	extendedchars=true,
+	basicstyle=\scriptsize\ttfamily,
+	%basicstyle=\tiny\ttfamily,
+	tabsize=2,
+	keywordstyle=\textbf,
+	commentstyle=\color{grau},
+	stringstyle=\textit,
+	numbers=left,
+	numberstyle=\tiny,
+	% für schönen Zeilenumbruch
+	breakautoindent  = true,
+	breakindent      = 2em,
+	breaklines       = true,
+	postbreak        = ,
+	%prebreak         = \raisebox{-.8ex}[0ex][0ex]{\ensuremath{\lrcorner}},
+	prebreak         = \raisebox{-.8ex}[0ex][0ex]{\Righttorque},
+}
+
